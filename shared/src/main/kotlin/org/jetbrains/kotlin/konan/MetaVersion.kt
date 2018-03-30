@@ -14,20 +14,17 @@
  * limitations under the License.
  */
 
-package org.jetbrains.kotlin.gradle.plugin.model
-
-import org.jetbrains.kotlin.konan.KonanVersion
-import java.io.Serializable
+package org.jetbrains.kotlin.konan
 
 /**
- * An immutable representation of Konan's project model for gradle tooling API.
- * This model is shared with the client processes such as an IDE.
- */
-interface KonanModel : Serializable {
-    val artifacts: List<KonanArtifact>
-}
+ *  https://en.wikipedia.org/wiki/Software_versioning
+ *  scheme major.minor[.build[.revision]].
+*/
 
-interface KonanArtifact : Serializable {
-    val name: String
-    val path: String
+enum class MetaVersion {
+  DEV,
+  EAP,
+  ALPHA,
+  BETA,
+  RC
 }
