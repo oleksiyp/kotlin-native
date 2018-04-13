@@ -16,7 +16,6 @@
 
 package org.jetbrains.kotlin.gradle.plugin.model
 
-import org.jetbrains.kotlin.konan.KonanVersion
 import java.io.Serializable
 
 /**
