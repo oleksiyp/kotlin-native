@@ -24,6 +24,8 @@ open class VersionGenerator: DefaultTask() {
                 val major = version[0].toInt()
                 val minor = version[1].toInt()
                 val maintenance = if (version.size > 2) version[2].toInt() else 0
+                println("env.dep.Kotlin_KotlinNative_Master_KotlinNativeCheckout.build.counter: ${System.getenv("env.dep.Kotlin_KotlinNative_Master_KotlinNativeCheckout.build.counter")}")
+                println("dep.Kotlin_KotlinNative_Master_KotlinNativeCheckout.build.counter: ${System.getenv("dep.Kotlin_KotlinNative_Master_KotlinNativeCheckout.build.counter")}")
                 val build = System.getenv("env.dep.Kotlin_KotlinNative_Master_KotlinNativeCheckout.build.counter")?.let {
                     it.split("-")[2].toInt() //7-dev-buildcount
                 }?: -1
