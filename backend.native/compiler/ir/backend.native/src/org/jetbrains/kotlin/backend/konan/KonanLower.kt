@@ -55,6 +55,10 @@ internal class KonanLower(val context: Context) {
             irModule.files.forEach(ExpectDeclarationsRemoving(context)::lower)
         }
 
+        phaser.phase(KonanPhase.MOCKK_INTERCEPTION_PROCESSOR) {
+            MockKInterceptionProcessor(context).process(irModule)
+        }
+
         phaser.phase(KonanPhase.TEST_PROCESSOR) {
             TestProcessor(context).process(irModule)
         }
